@@ -1,0 +1,267 @@
+.thumbnail {
+    padding: 0px;
+    border: 0px;
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.table {
+    display: table;
+}
+
+.row {
+    display: table-row;
+}
+
+.cell {
+    display: table-cell;
+    float: none;
+}
+
+.tam {
+    text-align: center;
+}
+
+.tal {
+    text-align: left;
+}
+
+.tar {
+    text-align: right;
+}
+
+.fw {
+    font-weight: bold;
+}
+
+.pd10 {
+    padding: 30px 20px 30px 20px;
+}
+
+.pd5 {
+    padding: 10px 20px 10px 20px;
+}
+
+.nol {
+    border: 1px solid #CCCCCC;
+    border-left: none;
+}
+
+.nor {
+    border: 1px solid #CCCCCC;
+    border-right: none;
+}
+
+.bf {
+    font-size: 42px;
+    margin-right: 10px;
+    color: #56A1EE;
+}
+
+.grey {
+    color: #999999;
+    margin-top: 8px;
+}
+
+.bsc {
+    padding: 0px;
+}
+
+.fonticon {
+    border-radius: 1em;
+    background-color: red;
+    font-size: 24px;
+    position: absolute;
+    top: 0px;
+    color: #fff;
+    margin-left: 4px;
+}
+
+.divhide {
+    display: none;
+}
+
+.fonthide {
+    color: #fff;
+}
+
+@media screen and (max-width: 379px) {
+    .cell {
+        padding: 0px;
+    }
+    .honour {
+        font-size: 10px;
+    }
+    .fonticon {
+        border-radius: 10px;
+        font-size: 10px;
+        top: 16px;
+    }
+    .explain {
+        font-size: 10px;
+        margin-top: 2px;
+    }
+    .icon {
+        max-width: 40px;
+    }
+    .pd10 {
+        padding: 16px 5px 16px 5px;
+    }
+    .pd5 {
+        padding: 14px 5px 14px 5px;
+    }
+    .sort {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 380px) and (max-width: 480px) {
+    .cell {
+        padding: 0px;
+    }
+    .honour {
+        font-size: 16px;
+    }
+    .fonticon {
+        border-radius: 16px;
+        font-size: 16px;
+        top: 20px;
+    }
+    .explain {
+        font-size: 12px;
+        margin-top: 2px;
+    }
+    .icon {
+        max-width: 100%;
+    }
+    .pd10 {
+        padding: 20px 10px 20px 10px;
+    }
+    .pd5 {
+        padding: 16px 8px 16px 8px;
+    }
+    .sort {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .cell {
+        padding: 0px;
+    }
+    .honour {
+        font-size: 22px;
+    }
+    .fonticon {
+        border-radius: 22px;
+        font-size: 22px;
+        top: 24px;
+        margin-left: 6px;
+    }
+    .explain {
+        font-size: 16px;
+        margin-top: 2px;
+    }
+    .icon {
+        max-width: 100%;
+    }
+    .pd10 {
+        padding: 24px 12px 24px 12px;
+    }
+    .pd5 {
+        padding: 20px 12px 20px 12px;
+    }
+    .sort {
+        font-size: 36px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .honour {
+        font-size: 24px;
+    }
+    .fonticon {
+        border-radius: 24px;
+        font-size: 24px;
+        top: 26px;
+        margin-left: 8px;
+    }
+    .explain {
+        font-size: 16px;
+        margin-top: 6px;
+    }
+    .icon {
+        max-width: 100%;
+    }
+    .pd10 {
+        padding: 26px 12px 26px 12px;
+    }
+    .pd5 {
+        padding: 24px 12px 24px 12px;
+    }
+    .sort {
+        font-size: 42px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .honour {
+        font-size: 24px;
+    }
+    .fonticon {
+        border-radius: 24px;
+        font-size: 24px;
+        top: 22px;
+    }
+    .explain {
+        font-size: 22px;
+        margin-top: 10px;
+    }
+    .icon {
+        max-width: 100%;
+    }
+    .pd10 {
+        padding: 22px 16px 22px 16px;
+    }
+    .pd5 {
+        padding: 20px 16px 20px 16px;
+    }
+    .sort {
+        font-size: 42px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .honour {
+        font-size: 24px;
+    }
+    .fonticon {
+        border-radius: 24px;
+        font-size: 24px;
+        top: 22px;
+    }
+    .explain {
+        font-size: 16px;
+        margin-top: 12px;
+    }
+    .icon {
+        max-width: 100%;
+    }
+    .pd10 {
+        padding: 22px 16px 22px 16px;
+    }
+    .pd5 {
+        padding: 20px 16px 20px 16px;
+    }
+    .sort {
+        font-size: 48px;
+    }
+}
+
+
+}

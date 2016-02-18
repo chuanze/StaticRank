@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>帮助文档</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <style type="text/css">
+    .header {
+        padding: 10px;
+        background-color: #EBECED;
+    }
+    
+    .txtl {
+        text-align: left;
+    }
+    
+    .txtc {
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <form class="bs-example bs-example-form" role="form" id="form">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control txtc" id="txt_value" placeholder="&ltimg src=''/>搜索" name="txt_value">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <ul class="list-group" id="list">
+            <li class="list-group-item"><a href="#">最低支持的手机系统版本</a></li>
+            <li class="list-group-item"><a href="#">登录后，一直提示加载数据中</a></li>
+            <li class="list-group-item"><a href="#">登录后，系统处于离线状态</a></li>
+            <li class="list-group-item"><a href="#">打开页面后，没有数据</a></li>
+            <li class="list-group-item"><a href="#">打开页面后，重复提示是否下载表单</a></li>
+            <li class="list-group-item"><a href="#">提交数据后，上传速度慢</a></li>
+            <li class="list-group-item"><a href="#">网络正常情况下，提交不了数据</a></li>
+            <li class="list-group-item"><a href="#">网络正常情况下，提交不了数据</a></li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script>
+    (function($) {
+        console.log("begin");
+        jQuery.expr[':'].Contains = function(a, i, m) {
+            return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+        };
+
+        function filterList(header, list) {
+            var input = $("<input>");
+            $("#txt_value")
+                .change(function() {
+                    var filter = $(this).val();
+                    if (filter) {
+                        $matches = $(list).find('a:Contains(' + filter + ')').parent();
+                        $('li', list).not($matches).slideUp();
+                        $matches.slideDown();
+                    } else {
+                        $(list).find("li").slideDown();
+                    }
+                    return false;
+                })
+                .keyup(function() {
+                    $(this).change();
+                });
+        }
+        $(function() {
+            filterList($("#form"), $("#list"));
+        });
+        document.getElementById("txt_value").addEventListener("focus", myfocus);
+        document.getElementById("txt_value").addEventListener("blur", myBlur);
+
+    }(jQuery));
+
+    function myfocus() {
+        console.log($("#txt_value").attr("placeholder"));
+        if ($("#txt_value").attr("placeholder") == "搜索") {
+            $("#txt_value").removeClass("txtc");
+            $("#txt_value").addClass("txtl");
+        }
+        console.log("focus");
+    }
+
+    function myBlur() {
+        if ($("#txt_value").attr("placeholder") == "搜索") {
+            $("#txt_value").removeClass("txtl");
+            $("#txt_value").addClass("txtc");
+        }
+        console.log("blur");
+    }
+    </script>
+</body>
+
+</html>

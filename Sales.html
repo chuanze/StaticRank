@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>达人榜</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/scroll.css">
+    <link rel="stylesheet" type="text/css" href="css/Sales.css">
+</head>
+
+<body>
+    <div class="container" id="head">
+        <div id="top">
+            <div class="topL bw">今日排行：10</div>
+            <div class="topM">昨日排行：12</div>
+            <div class="topR">今月排行:11</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="scroller">
+            <div id="pullDown">
+                <span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
+            </div>
+            <div id="main" class="container">
+            </div>
+            <div id="pullUp">
+                <span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
+            </div>
+        </div>
+    </div>
+    <script type="text/x-handlebars-template" id="ranktop">
+        <div id="topL" class="top topL bw" onclick="event_click(0);">今日排行：{{todaycount}}</div>
+        <div id="topM" class="topM" onclick="event_click(1);">昨日排行：{{yesterdaycount}}</div>
+        <div id="topR" class="topR" onclick="event_click(2);">今月排行:{{monthcount}}</div>
+        <div class="clear"></div>
+    </script>
+    <script type="text/x-handlebars-template" id="forday">
+        {{#each response_params}}
+        <div class="divt divi {{mystyle}}">
+            <div class="divr row clearfix">
+                <div class="div1 divc">
+                    <div class="divit">
+                        <div class="divc">
+                            {{rankimg}}
+                        </div>
+                    </div>
+                </div>
+                <div class="div2 divc">
+                    <div class="divit">
+                        <div class="divc">
+                            <img class="divm img-circle" src="{{logourl}}" style="max-width: 100%;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="div3 divc">
+                    <div class="goal fortext fw">{{username}}</div>
+                    <div class="sale grey fortext">完成{{sales}}万</div>
+                    <div class="clearfix"></div>
+                    <div class="progress pg forpg">
+                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{percent}};">
+                            <span class="sr-only">{{percent}} 完成（警告）</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="div4 divc">
+                    <div class="divit">
+                        <div class="divc"><span class="font">{{SortIcon}}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <script type="text/x-handlebars-temlate" id="formonth">
+        {{#each response_params}}
+        <div class="divt divi {{mystyle}}">
+            <div class="divr row clearfix">
+                <div class="div1 divc">
+                    <div class="divit">
+                        <div class="divc">
+                            {{rankimg}}
+                        </div>
+                    </div>
+                </div>
+                <div class="div2 divc">
+                    <div class="divit">
+                        <div class="divc">
+                            <img class="divm img-circle" src="{{logourl}}" style="max-width: 100%;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="div3 divc">
+                    <div class="name fw">{{username}}</div>
+                    <div class="goal grey">目标{{kpi}}万</div>
+                    <div class="sale grey">完成{{sales}}万</div>
+                    <div class="clearfix"></div>
+                    <div class="progress pg">
+                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{percent}};">
+                            <span class="sr-only">{{percent}}完成（警告）</span>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="div4 divc">
+                    <div class="divit">
+                        <div class="divc"><span class="font"></span></div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript" src="js/Sales.js"></script>
+    <script type="text/javascript">
+    </script>
+</body>
+
+</html>
